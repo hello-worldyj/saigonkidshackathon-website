@@ -20,6 +20,8 @@ export default function WaitlistForm() {
       name: String(data.get("name") ?? ""),
       email: String(data.get("email") ?? ""),
       parentEmail: String(data.get("parentEmail") ?? ""),
+      builderPhone: String(data.get("builderPhone") ?? ""),
+      parentPhone: String(data.get("parentPhone") ?? ""),
     };
 
     try {
@@ -91,6 +93,20 @@ export default function WaitlistForm() {
         type="email"
         placeholder="Parent/guardian email (optional)"
         maxLength={200}
+        className="rounded-lg border border-ink/20 px-3 py-2 text-sm text-ink focus:border-saigon focus:outline-none"
+      />
+      <input
+        name="builderPhone"
+        type="tel"
+        placeholder="Builder's phone number (optional)"
+        maxLength={40}
+        className="rounded-lg border border-ink/20 px-3 py-2 text-sm text-ink focus:border-saigon focus:outline-none"
+      />
+      <input
+        name="parentPhone"
+        type="tel"
+        placeholder="Parent's phone number (optional)"
+        maxLength={40}
         className="rounded-lg border border-ink/20 px-3 py-2 text-sm text-ink focus:border-saigon focus:outline-none"
       />
       {error && <p className="text-sm font-medium text-red-600">{error}</p>}

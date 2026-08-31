@@ -1,6 +1,6 @@
 import { google } from "googleapis";
 
-const RANGE = "Waitlist!A:D";
+const RANGE = "Waitlist!A:F";
 
 function auth() {
   const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
@@ -21,19 +21,34 @@ function sheetId() {
   return id;
 }
 
-export async function appendWaitlistRow(row: { name: string; email: string; parentEmail: string }) {
+export async function appendWaitlistRow(row: {
+  name: string;
+  email: string;
+  parentEmail: string;
+  builderPhone: string;
+  parentPhone: string;
+}) {
   const sheets = google.sheets({ version: "v4", auth: auth() });
   await sheets.spreadsheets.values.append({
     spreadsheetId: sheetId(),
     range: RANGE,
     valueInputOption: "RAW",
     requestBody: {
-      values: [[new Date().toISOString(), row.name, row.email, row.parentEmail]],
+      values: [
+        [new Date().toISOString(), row.name, row.email, row.parentEmail, row.builderPhone, row.parentPhone],
+      ],
     },
   });
 }
 
-export type WaitlistEntry = { timestamp: string; name: string; email: string; parentEmail: string };
+export type WaitlistEntry = {
+  timestamp: string;
+  name: string;
+  email: string;
+  parentEmail: string;
+  builderPhone: string;
+  parentPhone: string;
+};
 
 export async function listWaitlist(): Promise<WaitlistEntry[]> {
   const sheets = google.sheets({ version: "v4", auth: auth() });
@@ -44,5 +59,12 @@ export async function listWaitlist(): Promise<WaitlistEntry[]> {
   const rows = res.data.values ?? [];
   return rows
     .filter((r) => r[2])
-    .map((r) => ({ timestamp: r[0] ?? "", name: r[1] ?? "", email: r[2] ?? "", parentEmail: r[3] ?? "" }));
+    .map((r) => ({
+      timestamp: r[0] ?? "",
+      name: r[1] ?? "",
+      email: r[2] ?? "",
+      parentEmail: r[3] ?? "",
+      builderPhone: r[4] ?? "",
+      parentPhone: r[5] ?? "",
+    }));
 }
