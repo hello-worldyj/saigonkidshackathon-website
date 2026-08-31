@@ -100,7 +100,7 @@ export const RULES: Rule[] = [
     title: "Judging and prizes",
     summary: "120 points across 7 criteria. Judges test every project in the judging lab.",
     paragraphs: [
-      'Projects are scored out of 120 points across 7 criteria. Full scoring descriptors are on [the judging section](/#judging). Ties are broken first by Technical Execution, then Creativity / Originality, then Impact / "Why This?".',
+      'Projects are scored out of 120 points across 7 criteria. Ties are broken first by Technical Execution, then Creativity / Originality, then Impact / "Why This?".',
       "Judges test every project during the judging lab — this is not a pitch-only competition.",
     ],
   },
