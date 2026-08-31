@@ -49,10 +49,15 @@ export default function WaitlistForm() {
 
   if (status === "done") {
     return (
-      <span className="hero-fade inline-flex items-center gap-2 rounded-full bg-energy px-7 py-3.5 text-base font-extrabold text-ink shadow-[0_6px_0_#d18e07]">
-        You&apos;re on the list! Check your email.
-        <Sparkle size={16} color="#1e293b" />
-      </span>
+      <div className="hero-fade flex flex-col items-center gap-2">
+        <span className="inline-flex items-center gap-2 rounded-full bg-energy px-7 py-3.5 text-base font-extrabold text-ink shadow-[0_6px_0_#d18e07]">
+          You&apos;re on the list! Check your email.
+          <Sparkle size={16} color="#1e293b" />
+        </span>
+        <p className="text-sm font-semibold text-ink/60">
+          Don&apos;t see it? Check your spam folder.
+        </p>
+      </div>
     );
   }
 
@@ -74,7 +79,7 @@ export default function WaitlistForm() {
       onSubmit={handleSubmit}
       className="hero-fade flex w-full max-w-md flex-col gap-3 rounded-2xl border-2 border-saigon bg-white/90 p-5 text-left shadow-[0_6px_0_#01337f]"
     >
-      <p className="text-sm font-semibold text-ink">
+      <p className="text-base font-extrabold text-ink">
         Be the first to know when registration opens
       </p>
       <input
@@ -82,7 +87,7 @@ export default function WaitlistForm() {
         required
         placeholder="Participant's name"
         maxLength={200}
-        className="rounded-lg border border-ink/20 px-3 py-2 text-sm text-ink focus:border-saigon focus:outline-none"
+        className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
       <input
         name="email"
@@ -90,42 +95,42 @@ export default function WaitlistForm() {
         required
         placeholder="Email"
         maxLength={200}
-        className="rounded-lg border border-ink/20 px-3 py-2 text-sm text-ink focus:border-saigon focus:outline-none"
+        className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
       <input
         name="parentEmail"
         type="email"
         placeholder="Parent/guardian email (optional)"
         maxLength={200}
-        className="rounded-lg border border-ink/20 px-3 py-2 text-sm text-ink focus:border-saigon focus:outline-none"
+        className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
       <input
         name="builderPhone"
         type="tel"
         placeholder="Builder's phone number (optional)"
         maxLength={40}
-        className="rounded-lg border border-ink/20 px-3 py-2 text-sm text-ink focus:border-saigon focus:outline-none"
+        className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
       <input
         name="parentPhone"
         type="tel"
         placeholder="Parent's phone number (optional)"
         maxLength={40}
-        className="rounded-lg border border-ink/20 px-3 py-2 text-sm text-ink focus:border-saigon focus:outline-none"
+        className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
-      {error && <p className="text-sm font-medium text-red-600">{error}</p>}
+      {error && <p className="text-sm font-bold text-red-600">{error}</p>}
       <div className="mt-1 flex items-center gap-3">
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="rounded-full bg-energy px-6 py-2.5 text-sm font-semibold text-ink shadow-[0_4px_0_#d18e07] disabled:opacity-60"
+          className="rounded-full bg-energy px-6 py-2.5 text-sm font-extrabold text-ink shadow-[0_4px_0_#d18e07] disabled:opacity-60"
         >
           {status === "submitting" ? "Sending…" : "Notify me"}
         </button>
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="text-sm font-semibold text-ink/60 hover:text-ink"
+          className="text-sm font-extrabold text-ink/70 hover:text-ink"
         >
           Cancel
         </button>
