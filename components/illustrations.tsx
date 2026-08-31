@@ -282,7 +282,19 @@ export type KitKind = "snacks" | "stickers" | "hat" | "wristbands";
 
 export function KitIcon({ kind, className = "", size = 40 }: { kind: KitKind; className?: string; size?: number }) {
   // simple flat marks for the four things in the bag: a cookie, a star
-  // sticker with a peeled corner, a cap, a wristband with its clasp
+  // sticker with a peeled corner, a wristband with its clasp — the cap is
+  // the real emoji instead of a drawn mark
+  if (kind === "hat") {
+    return (
+      <span
+        className={className}
+        style={{ fontSize: size * 0.95, lineHeight: 1, display: "inline-block" }}
+        aria-hidden="true"
+      >
+        🧢
+      </span>
+    );
+  }
   return (
     <svg
       className={className}
@@ -313,14 +325,6 @@ export function KitIcon({ kind, className = "", size = 40 }: { kind: KitKind; cl
           />
           <path d="M30 34.8 L35.5 33.3 L31.6 28.5 Z" fill={YELLOW} />
           <circle cx="17" cy="16" r="2" fill="#fff" opacity="0.7" />
-        </>
-      )}
-      {kind === "hat" && (
-        <>
-          <path d="M8 24 C8 12 32 12 32 24 Z" fill={BLUE} />
-          <circle cx="20" cy="12" r="2.5" fill={YELLOW} />
-          <rect x="17" y="17" width="6" height="5" rx="1" fill={YELLOW} />
-          <path d="M8 24 C14 28 30 29 37 25 L36 29 C29 33 14 32 7 28 Z" fill={YELLOW} />
         </>
       )}
       {kind === "wristbands" && (
