@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* saigon kids hackathon brand palette — see GUIDELINES.md */
+  --color-canvas: #f1f5f9;
+  --color-saigon: #0145b4;
+  --color-saigon-deep: #01337f;
+  --color-energy: #f8ac1a;
+  --color-energy-deep: #d18e07;
+  --color-ink: #1e293b;
+  --color-mist: #e2e8f0;
+
+  --font-sans: var(--font-dynapuff), "Trebuchet MS", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: auto;
+  overflow-x: clip;
+  /* native hash jumps (reduced motion, no lenis) clear the fixed navbar */
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+::selection {
+  background-color: var(--color-energy);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-saigon);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* hollow display text used by the scroll ticker (and, in white, on the podium) */
+.text-outline-blue {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-saigon);
+}
+
+.text-outline-yellow {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-energy);
+}
+
+.text-outline-white {
+  color: transparent;
+  -webkit-text-stroke: 3px #fff;
+}
+
+/* faq accordion open/close via grid rows — no JS measuring needed */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.faq-item[data-open="true"] .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer > div {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-answer {
+    transition: none;
+  }
+}
+
+/* ————— object materials: paper, metal, lantern, marquee ————— */
+
+/* keyframes live in @theme so they only ship when a utility uses them;
+   callers apply them as motion-safe:animate-* so reduced motion opts out */
+@theme {
+  --animate-led-blink: led-blink 1.6s steps(1, end) infinite;
+  --animate-cursor-blink: cursor-blink 1s steps(1, end) infinite;
+
+  @keyframes led-blink {
+    0%, 60% { opacity: 1; }
+    61%, 100% { opacity: 0.25; }
+  }
+  @keyframes cursor-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+}
+
+/* a right-pointing arrow silhouette; --head sets the tip length */
+@utility clip-arrow {
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--head, 22px)) 0,
+    100% 50%,
+    calc(100% - var(--head, 22px)) 100%,
+    0 100%
+  );
+}
+
+/* brushed metal: a pale plate with fine vertical grain — control panels,
+   clip plates, label plates */
+.metal-brushed {
+  background: #dbe4f2 repeating-linear-gradient(90deg, #0000 0 3px, rgba(255, 255, 255, 0.35) 3px 4px);
+}
+
+/* torn paper: a zig-zag bottom edge cut with a mask, tooth pitch fixed in
+   px so it never stretches with the card's width or height */
+.zigzag-bottom {
+  --tooth: 16px;
+  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg)
+    50% 100% / var(--tooth) 100%;
+}
+
+/* notepad rules under the text — body copy uses leading-7 to sit on them */
+.paper-ruled {
+  background: #fff linear-gradient(#dbe4f2 2px, #0000 2px) 0 2.5rem / 100% 28px;
+}
+
+/* a paper lantern: the 50% vertical radius bulges the sides at any text
+   height; faint vertical ribs give it structure */
+.lantern-body {
+  border-radius: 44px / 50%;
+  background: #fff8e7 repeating-linear-gradient(90deg, #0000 0 18px, #f3e8d0 18px 21px);
+}
+
+/* an index card: one blue header rule, then faint rules under it */
+.paper-index {
+  background:
+    linear-gradient(#0145b4 2.5px, #0000 2.5px) 0 2.5rem / 100% 100% no-repeat,
+    linear-gradient(#dbe4f2 2px, #0000 2px) 0 3.25rem / 100% 28px,
+    #fff;
+}
+
+/* punched paper: ruled, with a column of holes down the left edge for
+   the binder rings — hole pitch fixed in px like the zigzag's tooth */
+.paper-punched {
+  background:
+    radial-gradient(circle at 1.25rem 50%, #c9d7ee 6px, #0000 7px) 0 0 / 100% 56px,
+    linear-gradient(#dbe4f2 2px, #0000 2px) 0 2.5rem / 100% 28px,
+    #fff;
+}
+
+/* a rubber stamp: tracked caps in a double ring, inked onto the paper.
+   tilt it with -rotate-6 when css owns it; when gsap lands it, rest it with
+   [transform:rotate(-6deg)] instead — v4's rotate-* writes the separate
+   `rotate` property, which would stack on top of gsap's transform */
+.stamp {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border: 3px solid currentColor;
+  border-radius: 0.6rem;
+  box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 4px currentColor;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  mix-blend-mode: multiply;
+}
+
+/* a luggage-tag silhouette pointing left; --nose sets the point's length */
+@utility clip-tag {
+  clip-path: polygon(
+    var(--nose, 14px) 0,
+    100% 0,
+    100% 100%,
+    var(--nose, 14px) 100%,
+    0 50%
+  );
+}
+
+/* a stage curtain: blue velvet with darker pleats, gathered by scaling it
+   sideways from its edge */
+.curtain-pleats {
+  background: repeating-linear-gradient(90deg, #0145b4 0 28px, #01337f 28px 36px);
+}
+
+/* stage boards: pale planks with a seam every so often */
+.stage-floor {
+  background: #dbe4f2 repeating-linear-gradient(90deg, #0000 0 60px, rgba(1, 69, 180, 0.15) 60px 63px);
+}
+
+/* a ticket: a round notch bitten out of each side, halfway down */
+.ticket-notched {
+  mask:
+    radial-gradient(circle at 0 50%, #0000 10px, #000 11px),
+    radial-gradient(circle at 100% 50%, #0000 10px, #000 11px);
+  mask-composite: intersect;
+}
