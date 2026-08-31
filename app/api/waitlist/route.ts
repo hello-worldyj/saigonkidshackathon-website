@@ -9,6 +9,8 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const ALLOWED_ORIGINS = [
   "https://saigon-kids-hackathon.web.app",
   "https://saigon-kids-hackathon.firebaseapp.com",
+  "https://saigonkidshackathon.web.app",
+  "https://saigonkidshackathon.firebaseapp.com",
 ];
 
 function corsHeaders(req: NextRequest) {

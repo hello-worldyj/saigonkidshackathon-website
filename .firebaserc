@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "saigon-kids-hackathon"
-  }
+  },
+  "targets": {
+    "saigon-kids-hackathon": {
+      "hosting": {
+        "saigonkidshackathon": [
+          "saigonkidshackathon"
+        ],
+        "saigon-kids-hackathon": [
+          "saigon-kids-hackathon"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
