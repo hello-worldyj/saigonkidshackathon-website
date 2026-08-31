@@ -7,7 +7,7 @@ import { FloatingLaptop, PixelStack, Sparkle } from "./decorations";
 import { Screws, SubjectIcon, type SubjectKind } from "./parts";
 import { PrizeTag } from "./illustrations";
 import SiteLink from "./SiteLink";
-import { EVENT, AGES, GRADES, TEAM_SIZE, FEE_COVERS } from "./event";
+import { EVENT, AGES, GRADES, TEAM_SIZE, FEE_COVERS, NONPROFIT_NOTE } from "./event";
 import { RULES } from "./rules";
 import { ON_SITE_RULE, CHAPERONE_RULE } from "./parents";
 
@@ -328,6 +328,7 @@ export default function ImportantInfo() {
                     <span className="text-lg font-bold">{EVENT.fee.display} per builder</span>
                   </PrizeTag>
                 </div>
+                <p className="mt-3 text-sm font-bold text-saigon">{NONPROFIT_NOTE}</p>
                 <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-ink/50">
                   What it covers
                 </p>

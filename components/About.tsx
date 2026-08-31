@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PixelGrid, Sparkle, FloatingLaptop, PixelBulb, PixelStack, FlightArc, PixelTrophy } from "./decorations";
 import { Screws, DomeButton, Led, Pushpin } from "./parts";
 import { PartyPopper } from "./illustrations";
-import { EVENT } from "./event";
+import { EVENT, NONPROFIT_NOTE } from "./event";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -209,6 +209,9 @@ export default function About() {
                 friends, dream up an idea, and build it — a game, an app, a robot, a
                 website — with mentors beside you the whole way. No grades, no
                 pressure, just making things you&apos;re proud of.
+              </p>
+              <p className="about-line mt-4 text-base font-semibold text-saigon lg:text-lg">
+                {NONPROFIT_NOTE}
               </p>
             </div>
             <div className="mx-16 flex justify-between" aria-hidden="true">

@@ -4,16 +4,21 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Sparkle, PixelGrid, PixelStack } from "./decorations";
-import { Hook } from "./parts";
+import { Screws, Hook } from "./parts";
 import { Trophy, Medal, Rosette, PrizeTag } from "./illustrations";
 import { TEAM_AWARDS, SOLO_AWARDS, PRIZE_TBA, type TeamAward } from "./awards";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const TOPPER: Record<TeamAward["place"], React.ReactNode> = {
-  1: <Trophy size={72} />,
-  2: <Medal tone="silver" size={56} />,
-  3: <Medal tone="bronze" size={56} />,
+  1: (
+    <span className="relative inline-block">
+      <Trophy size={76} className="h-auto w-[3.75rem] md:w-[76px]" />
+      <Medal tone="gold" size={30} className="absolute -right-3 bottom-1 -z-[1] rotate-12" />
+    </span>
+  ),
+  2: <Medal tone="silver" size={40} />,
+  3: <Medal tone="bronze" size={38} />,
 };
 
 /* 2nd | 1st | 3rd left to right, the way a real podium reads — by grid
@@ -22,6 +27,13 @@ const ORDER: Record<TeamAward["place"], string> = {
   1: "order-2",
   2: "order-1",
   3: "order-3",
+};
+
+/* each step has its own height — the winner stands tallest */
+const CLIP: Record<TeamAward["place"], string> = {
+  1: "h-32 md:h-40",
+  2: "h-24 md:h-28",
+  3: "h-20 md:h-24",
 };
 
 export default function Prizes() {
@@ -42,7 +54,7 @@ export default function Prizes() {
         scrollTrigger: { trigger: section, start: "top 85%" },
       });
 
-      gsap.from(gsap.utils.toArray<HTMLElement>(".podium-card", section), {
+      gsap.from(gsap.utils.toArray<HTMLElement>(".podium-step-col", section), {
         y: 40,
         opacity: 0,
         duration: 0.6,
@@ -88,17 +100,39 @@ export default function Prizes() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {/* the stage: a dark riveted box, three steps rising to different
+            heights, a topper (trophy or medal) above each */}
+        <div className="relative mx-auto mt-10 max-w-3xl rounded-3xl border-4 border-saigon bg-saigon-deep p-5 pt-10 shadow-[0_8px_0_#01337f] md:p-8 md:pt-14">
+          <Screws className="opacity-60" />
+          <div className="grid grid-cols-3 items-end gap-3 px-1 md:gap-6 md:px-4">
+            {TEAM_AWARDS.map((award) => (
+              <div key={award.place} className={`podium-step-col flex flex-col items-center ${ORDER[award.place]}`}>
+                <div className="relative z-10 -mb-3 flex items-end justify-center">{TOPPER[award.place]}</div>
+                <div
+                  className={`${CLIP[award.place]} flex w-full flex-col items-center justify-center gap-1.5 rounded-t-2xl border-4 border-saigon-deep border-t-[8px] border-t-energy bg-saigon px-1 pb-3 shadow-[inset_0_-6px_0_#01337f]`}
+                >
+                  <span className="text-outline-white text-3xl font-bold leading-none md:text-5xl">
+                    {award.ordinal}
+                  </span>
+                  <span className="metal-brushed rounded-md border-2 border-saigon px-2 py-0.5 text-[8px] font-bold uppercase tracking-widest text-ink/70 md:text-[10px]">
+                    {award.name}
+                  </span>
+                  <PrizeTag tone="white" className="mt-0.5 hidden sm:inline-flex">
+                    <span className="whitespace-nowrap text-[10px]">+ a prize each</span>
+                  </PrizeTag>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="stage-floor relative z-10 mt-1 h-8 rounded-b-xl border-4 border-t-0 border-saigon shadow-[0_5px_0_#01337f]" aria-hidden="true" />
+        </div>
+
+        {/* captions under each step, in the same three columns */}
+        <div className="mx-auto mt-8 grid max-w-3xl grid-cols-3 gap-3 px-1 text-center md:gap-6 md:px-4">
           {TEAM_AWARDS.map((award) => (
-            <div
-              key={award.place}
-              className={`podium-card flex flex-col items-center rounded-2xl border-[3px] border-saigon bg-white p-6 text-center shadow-[0_6px_0_#cbd8ee] ${ORDER[award.place]}`}
-            >
-              {TOPPER[award.place]}
-              <span className="mt-3 rounded-full border-2 border-saigon bg-energy px-3 py-1 text-sm font-bold text-ink">
-                {award.ordinal} place
-              </span>
-              <ul className="mt-4 space-y-1 text-sm font-medium text-ink/70">
+            <div key={award.place} className={ORDER[award.place]}>
+              <h3 className="font-bold">{award.name}</h3>
+              <ul className="mt-1 space-y-0.5 text-sm font-medium text-ink/70">
                 {award.wins.map((win) => (
                   <li key={win} className="flex items-start justify-center gap-1.5">
                     <span className="mt-1.5 h-2 w-2 shrink-0 rounded-[2px] bg-energy" aria-hidden="true" />
@@ -106,7 +140,7 @@ export default function Prizes() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-3 text-xs font-semibold text-ink/60">{PRIZE_TBA}</p>
+              <p className="mt-2 text-xs font-semibold text-ink/60">{PRIZE_TBA}</p>
             </div>
           ))}
         </div>

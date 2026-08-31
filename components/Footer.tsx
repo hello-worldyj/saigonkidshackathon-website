@@ -93,6 +93,9 @@ export default function Footer() {
         <p className="footer-pop mt-6 text-lg font-medium text-white/80">
           {EVENT.city} · {EVENT.spots} young makers · one unforgettable day
         </p>
+        <p className="footer-pop mt-2 text-sm font-bold uppercase tracking-widest text-energy">
+          A 100% non-profit initiative
+        </p>
 
         <div className="footer-pop mt-8 flex justify-center">
           <span className="rounded-full bg-energy px-7 py-3.5 text-base font-semibold text-ink shadow-[0_6px_0_#d18e07]">

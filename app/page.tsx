@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import CostAndRule from "@/components/CostAndRule";
 import Ticker from "@/components/Ticker";
 import About from "@/components/About";
 import Tracks from "@/components/Tracks";
@@ -17,6 +18,7 @@ export default function Home() {
     <main>
       <AmbientMotion />
       <Hero />
+      <CostAndRule />
       <Ticker />
       <About />
       <Tracks />
