@@ -3,6 +3,10 @@
 import { useState, type FormEvent } from "react";
 import { Sparkle } from "./decorations";
 
+// on a static (Firebase) build there's no local /api — calls go straight to
+// the Vercel deployment that hosts the real API routes.
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? "";
+
 type Status = "idle" | "open" | "submitting" | "done" | "error";
 
 export default function WaitlistForm() {
@@ -25,7 +29,7 @@ export default function WaitlistForm() {
     };
 
     try {
-      const res = await fetch("/api/waitlist", {
+      const res = await fetch(`${API_BASE}/api/waitlist`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
