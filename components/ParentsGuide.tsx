@@ -9,12 +9,12 @@ import { PrizeTag } from "./illustrations";
 import SiteLink from "./SiteLink";
 import { PARENTS_GUIDE, ON_SITE_RULE, type GuideItem } from "./parents";
 import { AGENDA } from "./agenda";
-import { EVENT } from "./event";
+import { EVENT, TICKETS } from "./event";
 
 gsap.registerPlugin(ScrollTrigger);
 
 /* the three facts a parent checks first, as chips under the title */
-const CHIPS = [EVENT.dateLong, EVENT.city, `${EVENT.fee.display} per builder`];
+const CHIPS = [EVENT.dateLong, EVENT.city, `${TICKETS[0].display}–${TICKETS[1].display}`];
 
 /* the resting tilt of each paper note, in the order they're pinned */
 const NOTE_TILT = [-1.5, 1, -0.8, 1.2];
@@ -123,8 +123,12 @@ function FeeTag({ item }: { item: GuideItem }) {
   return (
     <div className="board-item relative rounded-2xl border-[3px] border-saigon bg-white p-6 shadow-[0_6px_0_#01337f]">
       <h3 className="text-xs font-semibold uppercase tracking-widest text-ink/50">{item.title}</h3>
-      <div className="mt-3">
-        <PrizeTag className="text-lg [&_span]:text-lg">{EVENT.fee.display} per builder</PrizeTag>
+      <div className="mt-3 flex flex-wrap gap-3">
+        {TICKETS.map((ticket) => (
+          <PrizeTag key={ticket.id} tone={ticket.lunch ? "yellow" : "white"} className="text-lg [&_span]:text-lg">
+            {ticket.display}
+          </PrizeTag>
+        ))}
       </div>
       {item.body.map((text) => (
         <p key={text} className="mt-4 text-lg font-medium leading-7 text-ink/70">

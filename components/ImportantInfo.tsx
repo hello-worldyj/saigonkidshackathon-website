@@ -7,7 +7,7 @@ import { FloatingLaptop, PixelStack, Sparkle } from "./decorations";
 import { Screws, SubjectIcon, type SubjectKind } from "./parts";
 import { PrizeTag } from "./illustrations";
 import SiteLink from "./SiteLink";
-import { EVENT, AGES, GRADES, TEAM_SIZE, FEE_COVERS, NONPROFIT_NOTE } from "./event";
+import { AGES, GRADES, TEAM_SIZE, FEE_COVERS, NONPROFIT_NOTE, TICKETS } from "./event";
 import { RULES } from "./rules";
 import { ON_SITE_RULE, CHAPERONE_RULE } from "./parents";
 
@@ -318,16 +318,30 @@ export default function ImportantInfo() {
               {/* the deck: clipped while it glides between card heights */}
               <div ref={deckRef} className="info-deck relative overflow-hidden">
               <Panel id="fees" title="Fees" active={active === "fees"}>
-                {/* the price on a luggage tag, hung from a short string */}
-                <div className="relative inline-block pt-4">
-                  <span
-                    className="absolute left-[18px] top-0 h-5 w-[3px] rounded-full bg-saigon"
-                    aria-hidden="true"
-                  />
-                  <PrizeTag className="-rotate-1 [filter:drop-shadow(0_4px_0_#01337f)]">
-                    <span className="text-lg font-bold">{EVENT.fee.display} per builder</span>
-                  </PrizeTag>
+                {/* two tags, one per ticket, hung from a short string each */}
+                <div className="flex flex-wrap items-start gap-6">
+                  {TICKETS.map((ticket, i) => (
+                    <div key={ticket.id} className="relative inline-block pt-4">
+                      <span
+                        className="absolute left-[18px] top-0 h-5 w-[3px] rounded-full bg-saigon"
+                        aria-hidden="true"
+                      />
+                      <PrizeTag
+                        tone={ticket.lunch ? "yellow" : "white"}
+                        className={`[filter:drop-shadow(0_4px_0_#01337f)] ${i % 2 ? "rotate-1" : "-rotate-1"}`}
+                      >
+                        <span className="text-lg font-bold">{ticket.display}</span>
+                      </PrizeTag>
+                      <p className="mt-2 text-xs font-bold uppercase tracking-widest text-ink/50">
+                        {ticket.lunch ? "With lunch" : "Standard"}
+                      </p>
+                    </div>
+                  ))}
                 </div>
+                <p className="mt-4 text-base font-medium leading-7 text-ink/70 md:text-lg">
+                  The lunch ticket adds a bánh mì at midday — everything else is identical between
+                  the two.
+                </p>
                 <p className="mt-3 text-sm font-bold text-saigon">{NONPROFIT_NOTE}</p>
                 <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-ink/50">
                   What it covers

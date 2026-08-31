@@ -1,7 +1,7 @@
 /* the parents' guide, as pinned notes on a board. `kind` picks the object
    each item is drawn as; the copy is plain strings so it's easy to edit */
 
-import { EVENT, TEAM_SIZE, NONPROFIT_NOTE } from "./event";
+import { EVENT, TEAM_SIZE, NONPROFIT_NOTE, TICKETS } from "./event";
 
 export const ON_SITE_RULE = "A parent or guardian stays on site for the whole event — start to finish.";
 
@@ -47,7 +47,7 @@ export const PARENTS_GUIDE: GuideItem[] = [
     kind: "tag",
     title: "The fee",
     body: [
-      `${EVENT.fee.display} per builder. It covers the whole day: lunch and snacks, the builders kit, the mentors, and the judging lab. How and when to pay comes with the registration confirmation.`,
+      `Two tiers: ${TICKETS[0].display} standard, or ${TICKETS[1].display} with lunch (a bánh mì) included. Both cover the whole day: snacks, the builders kit, the mentors, and the judging lab. How and when to pay comes with the registration confirmation.`,
       NONPROFIT_NOTE,
     ],
   },

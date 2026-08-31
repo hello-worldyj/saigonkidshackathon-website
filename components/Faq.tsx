@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PixelGrid } from "./decorations";
-import { EVENT, AGES, GRADES, TEAM_SIZE } from "./event";
+import { EVENT, AGES, GRADES, TEAM_SIZE, TICKETS } from "./event";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     q: "How much does it cost?",
-    a: `${EVENT.fee.display} per builder. That covers the whole day — lunch, snacks, the builders kit, mentors, and the judging lab. How to pay comes with registration.`,
+    a: `${TICKETS[0].display} standard, or ${TICKETS[1].display} with lunch (a bánh mì) included. Both cover the whole day — snacks, the builders kit, mentors, and the judging lab. How to pay comes with registration.`,
   },
   {
     q: "Do parents stay?",
@@ -37,7 +37,7 @@ const FAQS = [
 
 export default function Faq() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
 
   useEffect(() => {
     const mm = gsap.matchMedia();
