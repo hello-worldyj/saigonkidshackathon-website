@@ -317,10 +317,12 @@ export function KitIcon({ kind, className = "", size = 40 }: { kind: KitKind; cl
       )}
       {kind === "hat" && (
         <>
-          <path d="M8 24 C8 12 32 12 32 24 Z" fill={BLUE} />
-          <circle cx="20" cy="12" r="2.5" fill={YELLOW} />
-          <rect x="17" y="17" width="6" height="5" rx="1" fill={YELLOW} />
-          <path d="M8 24 C14 28 30 29 37 25 L36 29 C29 33 14 32 7 28 Z" fill={YELLOW} />
+          {/* a baseball cap in side profile: domed crown, a seam down the
+              front panel, a button on top, and the brim jutting forward */}
+          <path d="M6 23 C6 10 25 9 25 21 L25 23 Z" fill={BLUE} />
+          <path d="M15 11.5 L15 22" stroke={BLUE_DEEP} strokeWidth="1.4" strokeLinecap="round" />
+          <circle cx="15" cy="10" r="2" fill={YELLOW} />
+          <path d="M19 20 C25 19.5 32 20.5 35.5 24 C31.5 26.3 22 26 18 23.3 Z" fill={YELLOW} />
         </>
       )}
       {kind === "wristbands" && (

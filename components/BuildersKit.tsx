@@ -144,7 +144,7 @@ export default function BuildersKit() {
       <div className="pointer-events-none absolute right-12 top-10 -z-[1] hidden lg:block">
         <PixelGrid className="ambient-float" size={96} />
       </div>
-      <div className="pointer-events-none absolute bottom-20 right-16 -z-[1] hidden lg:block">
+      <div className="pointer-events-none absolute bottom-44 right-16 -z-[1] hidden lg:block">
         <CodeMark className="ambient-float" size={150} />
       </div>
       <div className="mx-auto max-w-5xl">
