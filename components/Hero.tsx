@@ -263,7 +263,7 @@ export default function Hero() {
 
         <p className="hero-fade mt-3 inline-flex items-center gap-2 rounded-full border-2 border-saigon/30 bg-white/70 px-4 py-1.5 text-sm font-bold text-saigon">
           <Sparkle size={14} color="#0145b4" />
-          100% non-profit — run by volunteers, not a company
+          We are a non-profit organization
         </p>
 
         <div className="hero-fade mt-7 flex flex-wrap items-center justify-center gap-4">

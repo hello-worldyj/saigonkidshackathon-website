@@ -94,7 +94,7 @@ export default function Footer() {
           {EVENT.city} · {EVENT.spots} young makers · one unforgettable day
         </p>
         <p className="footer-pop mt-2 text-sm font-bold uppercase tracking-widest text-energy">
-          A 100% non-profit initiative
+          We are a non-profit organization
         </p>
 
         <div className="footer-pop mt-8 flex justify-center">

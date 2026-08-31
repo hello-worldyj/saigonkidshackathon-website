@@ -38,4 +38,4 @@ export const FEE_COVERS = [
 /* the non-profit line, reused wherever we talk about the fee or who runs
    the day — one sentence, everywhere it appears */
 export const NONPROFIT_NOTE =
-  "Run by a non-profit, not a company — the fee covers the day's costs and nothing more.";
+  "We are a non-profit organization — the fee covers the day's costs and nothing more.";
