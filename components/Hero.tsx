@@ -143,7 +143,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="top"
-      className="relative flex min-h-svh flex-col items-center justify-start overflow-hidden px-3 pt-20 pb-12 sm:px-4 sm:pt-28 md:pb-16 md:pt-40"
+      className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-3 pt-16 pb-8 sm:px-4 sm:pt-28 md:pb-16 md:pt-40"
     >
       {/* scene: saigon skyline left, palms right (the hoover-tower analog) */}
       {/* the three anchors: big tower left, sign center, foliage corner right */}
@@ -185,12 +185,12 @@ export default function Hero() {
       <div className="hero-content relative flex max-w-4xl flex-col items-center text-center">
         <div className="relative">
           {/* the sign */}
-          <div className="hero-sign relative rounded-[1.5rem] border-4 border-saigon bg-white px-5 py-6 shadow-[inset_0_0_0_4px_#c9d7ee,inset_0_-3px_0_4px_#a8bfe2,0_8px_32px_rgba(1,69,180,0.12)] sm:rounded-[2rem] sm:border-[6px] sm:px-8 sm:py-8 sm:shadow-[inset_0_0_0_6px_#c9d7ee,inset_0_-4px_0_6px_#a8bfe2,0_10px_40px_rgba(1,69,180,0.12)] md:px-14 md:py-10">
+          <div className="hero-sign relative rounded-[1.5rem] border-4 border-saigon bg-white px-4 py-5 shadow-[inset_0_0_0_4px_#c9d7ee,inset_0_-3px_0_4px_#a8bfe2,0_6px_24px_rgba(1,69,180,0.12)] sm:rounded-[2rem] sm:border-[6px] sm:px-8 sm:py-8 sm:shadow-[inset_0_0_0_6px_#c9d7ee,inset_0_-4px_0_6px_#a8bfe2,0_10px_40px_rgba(1,69,180,0.12)] md:px-14 md:py-10">
             {/* pixel-grid accents tucked into the bevel's corners */}
-            <PixelGrid className="absolute left-4 top-4" size={16} />
-            <PixelGrid className="absolute right-4 top-4 -scale-x-100" size={16} />
-            <PixelGrid className="absolute bottom-4 left-4 -scale-y-100" size={16} />
-            <PixelGrid className="absolute bottom-4 right-4 -scale-100" size={16} />
+            <PixelGrid className="absolute left-2 top-2 sm:left-4 sm:top-4" size={12} />
+            <PixelGrid className="absolute right-2 top-2 -scale-x-100 sm:right-4 sm:top-4 sm:size-4" size={12} />
+            <PixelGrid className="absolute bottom-2 left-2 -scale-y-100 sm:bottom-4 sm:left-4" size={12} />
+            <PixelGrid className="absolute bottom-2 right-2 -scale-100 sm:bottom-4 sm:right-4" size={12} />
             {/* spire + golden rings */}
             <svg
               className="absolute -top-16 left-1/2 h-20 w-16 -translate-x-1/2"
@@ -224,16 +224,16 @@ export default function Hero() {
               width={110}
               height={110}
               priority
-              className="hero-logo mx-auto mb-4"
+              className="hero-logo mx-auto mb-2 h-20 w-20 sm:mb-4 sm:h-28 sm:w-28"
             />
 
-            <h1 className="relative text-4xl font-bold leading-[0.95] sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="relative text-3xl font-bold leading-[0.9] sm:text-5xl sm:leading-[0.95] md:text-6xl lg:text-7xl">
               <span className="sr-only">Saigon Kids Hackathon</span>
               <SplitWord word="Saigon Kids" className="block text-energy" />
               <SplitWord word="Hackathon" className="block text-saigon" />
             </h1>
 
-            <p className="hero-fade mt-5 text-base font-semibold text-ink sm:text-lg">
+            <p className="hero-fade mt-2 text-sm font-semibold text-ink sm:mt-5 sm:text-lg">
               March 6, 2027 · Ho Chi Minh City
             </p>
           </div>
@@ -242,31 +242,31 @@ export default function Hero() {
         {/* who's behind it — plain bold names with a logo slot each, no pills.
             each × lives inside the span of the name that follows it, so the
             pair never splits across a line break */}
-        <div className="hero-fade mt-24 flex w-max max-w-[calc(100vw-2rem)] flex-wrap items-center justify-center gap-x-8 gap-y-4">
+        <div className="hero-fade mt-6 flex w-max max-w-[calc(100vw-1.5rem)] flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:mt-24 sm:gap-x-8 sm:gap-y-4">
           {PARTNERS.map((partner, i) => (
-            <span key={partner.name} className="inline-flex items-center gap-3">
+            <span key={partner.name} className="inline-flex items-center gap-2 sm:gap-3">
               {i > 0 && (
-                <span className="text-2xl font-bold leading-none text-energy md:text-3xl" aria-hidden="true">
+                <span className="text-xl font-bold leading-none text-energy sm:text-2xl md:text-3xl" aria-hidden="true">
                   ×
                 </span>
               )}
-              <LogoSlot partner={partner} size={64} />
-              <span className="text-lg font-bold text-saigon sm:text-xl xl:text-2xl">{partner.name}</span>
+              <LogoSlot partner={partner} size={48} />
+              <span className="text-sm font-bold text-saigon sm:text-lg sm:font-bold md:text-xl lg:text-2xl">{partner.name}</span>
             </span>
           ))}
         </div>
 
-        <p className="hero-fade mt-6 max-w-xl text-lg font-medium text-ink/80 md:text-xl">
+        <p className="hero-fade mt-3 max-w-xl text-xs font-medium text-ink/80 sm:text-lg md:text-xl">
           One big day of building, coding, and playing — for {EVENT.spots} young makers
           aged {AGES}.
         </p>
 
-        <p className="hero-fade mt-3 inline-flex items-center gap-2 rounded-full border-2 border-saigon/30 bg-white/70 px-4 py-1.5 text-sm font-bold text-saigon">
+        <p className="hero-fade mt-2 inline-flex items-center gap-2 rounded-full border-2 border-saigon/30 bg-white/70 px-3 py-1 text-xs font-bold text-saigon sm:mt-3 sm:px-4 sm:py-1.5 sm:text-sm">
           <Sparkle size={14} color="#0145b4" />
           We are a non-profit organization
         </p>
 
-        <div className="hero-fade mt-7 flex flex-wrap items-center justify-center gap-4">
+        <div className="hero-fade mt-4 flex flex-col gap-3 sm:mt-7 sm:flex-row sm:gap-4">
           <WaitlistForm />
           <SiteLink
             href="/#about"
