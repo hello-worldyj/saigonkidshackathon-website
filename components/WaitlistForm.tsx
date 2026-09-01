@@ -100,21 +100,24 @@ export default function WaitlistForm() {
       <input
         name="parentEmail"
         type="email"
-        placeholder="Parent/guardian email (optional)"
+        required
+        placeholder="Parent/guardian email"
         maxLength={200}
         className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
       <input
         name="builderPhone"
         type="tel"
-        placeholder="Builder's phone number (optional)"
+        required
+        placeholder="Builder's phone number"
         maxLength={40}
         className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
       <input
         name="parentPhone"
         type="tel"
-        placeholder="Parent's phone number (optional)"
+        required
+        placeholder="Parent's phone number"
         maxLength={40}
         className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />

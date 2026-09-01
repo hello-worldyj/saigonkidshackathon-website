@@ -48,11 +48,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "A valid email is required" }, { status: 400, headers });
   }
   const parentEmailValue = typeof parentEmail === "string" ? parentEmail.trim() : "";
-  if (parentEmailValue && !EMAIL_RE.test(parentEmailValue)) {
-    return NextResponse.json({ error: "Parent/guardian email looks invalid" }, { status: 400, headers });
+  if (!parentEmailValue || !EMAIL_RE.test(parentEmailValue)) {
+    return NextResponse.json({ error: "A valid parent/guardian email is required" }, { status: 400, headers });
   }
   const builderPhoneValue = typeof builderPhone === "string" ? builderPhone.trim().slice(0, 40) : "";
+  if (!builderPhoneValue) {
+    return NextResponse.json({ error: "Builder's phone number is required" }, { status: 400, headers });
+  }
   const parentPhoneValue = typeof parentPhone === "string" ? parentPhone.trim().slice(0, 40) : "";
+  if (!parentPhoneValue) {
+    return NextResponse.json({ error: "Parent's phone number is required" }, { status: 400, headers });
+  }
 
   const trimmedName = name.trim().slice(0, 200);
   const trimmedEmail = email.trim().slice(0, 200);
