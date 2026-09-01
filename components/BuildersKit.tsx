@@ -136,7 +136,7 @@ export default function BuildersKit() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="kit" className="relative px-4 py-24">
+    <section ref={sectionRef} id="kit" className="relative px-4 py-16 sm:py-20 md:py-24">
       {/* big hooks in the corners: a sparkle, a pixel cluster, the code mark */}
       <div className="pointer-events-none absolute left-12 top-12 -z-[1] hidden lg:block">
         <Sparkle className="ambient-twinkle" size={56} />
@@ -149,11 +149,11 @@ export default function BuildersKit() {
       </div>
       <div className="mx-auto max-w-5xl">
         <div className="text-center">
-          <p className="kit-line mb-3 text-sm font-semibold text-saigon">In your bag ✦</p>
-          <h2 className="kit-line text-4xl font-bold leading-tight md:text-5xl">
+          <p className="kit-line mb-3 text-xs font-semibold text-saigon sm:text-sm">In your bag ✦</p>
+          <h2 className="kit-line text-2xl font-bold leading-tight sm:text-4xl md:text-5xl">
             Every builder gets a <span className="text-saigon">builders kit</span>
           </h2>
-          <p className="kit-line mt-4 font-medium text-ink/60">
+          <p className="kit-line mt-3 text-sm font-medium text-ink/60 sm:text-base">
             Snacks, stickers, a hat and wristbands — yours to keep.
           </p>
         </div>
@@ -163,7 +163,7 @@ export default function BuildersKit() {
             a 2×2 grid under it. the bag is two layers either side of the
             goods in the dom, so they start inside it and the front covers
             them until they pop out */}
-        <div className="kit-stage relative mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-6 md:block md:h-[30rem]">
+        <div className="kit-stage relative mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-3 sm:gap-6 sm:mt-14 md:block md:h-[30rem]">
           {/* back layer: handles and the dark mouth. the front reads as a
               whole bag on its own, so this one only shows on md+ */}
           <div
@@ -178,7 +178,7 @@ export default function BuildersKit() {
               {/* outer div is the pop, this one drifts */}
               <div className="ambient-float flex flex-col items-center" data-amp="s">
                 {ART[item.id]}
-                <span className="kit-caption mt-2 rounded-full border-2 border-saigon bg-white px-3 py-1 text-xs font-bold shadow-[0_3px_0_#cbd8ee]">
+                <span className="kit-caption mt-1 rounded-full border border-saigon bg-white px-2 py-0.5 text-xs font-bold shadow-[0_2px_0_#cbd8ee] sm:mt-2 sm:border-2 sm:px-3 sm:py-1 sm:shadow-[0_3px_0_#cbd8ee]">
                   {item.name}
                 </span>
               </div>
@@ -196,7 +196,7 @@ export default function BuildersKit() {
         </div>
 
         {/* the same four things in plain words, so nobody has to hunt */}
-        <dl className="mt-8 grid grid-cols-2 gap-4 text-center text-sm font-medium text-ink/65 md:grid-cols-4">
+        <dl className="mt-6 grid grid-cols-2 gap-3 text-center text-xs font-medium text-ink/65 sm:mt-8 sm:gap-4 sm:text-sm md:grid-cols-4">
           {KIT.map((item) => (
             <div key={item.id}>
               <dt className="font-bold text-ink">{item.name}</dt>
