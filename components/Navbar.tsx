@@ -18,6 +18,7 @@ const LINKS = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -39,6 +40,7 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-2"
           aria-label="Saigon Kids Hackathon — home"
+          onClick={() => setMobileMenuOpen(false)}
         >
           <Image
             src="/logo.png"
@@ -65,10 +67,42 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <span className="rounded-full bg-energy px-4 py-2 text-sm font-semibold text-ink">
+        <span className="hidden rounded-full bg-energy px-4 py-2 text-sm font-semibold text-ink sm:inline-block">
           March 6, 2027
         </span>
+
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden flex flex-col gap-1.5 p-2"
+          aria-label="Toggle mobile menu"
+        >
+          <span className={`h-0.5 w-5 bg-saigon transition-all ${mobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`h-0.5 w-5 bg-saigon transition-all ${mobileMenuOpen ? "opacity-0" : ""}`} />
+          <span className={`h-0.5 w-5 bg-saigon transition-all ${mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+        </button>
       </nav>
+
+      {/* Mobile menu dropdown */}
+      {mobileMenuOpen && (
+        <div className={`absolute left-4 right-4 top-20 rounded-2xl bg-white/95 shadow-lg backdrop-blur md:hidden ${scrolled ? "" : "border border-saigon/20"}`}>
+          <ul className="flex flex-col gap-0">
+            {LINKS.map((link, i) => (
+              <li key={link.href}>
+                <SiteLink
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block px-6 py-3 text-sm font-medium text-ink transition-colors hover:text-saigon ${
+                    i !== LINKS.length - 1 ? "border-b border-saigon/10" : ""
+                  }`}
+                >
+                  {link.label}
+                </SiteLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

@@ -87,7 +87,7 @@ export default function WaitlistForm() {
         required
         placeholder="Participant's name"
         maxLength={200}
-        className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
+        className="rounded-lg border-2 border-saigon/40 px-3 py-3 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
       <input
         name="email"
@@ -95,7 +95,7 @@ export default function WaitlistForm() {
         required
         placeholder="Email"
         maxLength={200}
-        className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
+        className="rounded-lg border-2 border-saigon/40 px-3 py-3 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
       <input
         name="parentEmail"
@@ -103,7 +103,7 @@ export default function WaitlistForm() {
         required
         placeholder="Parent/guardian email"
         maxLength={200}
-        className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
+        className="rounded-lg border-2 border-saigon/40 px-3 py-3 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
       <input
         name="builderPhone"
@@ -111,7 +111,7 @@ export default function WaitlistForm() {
         required
         placeholder="Builder's phone number"
         maxLength={40}
-        className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
+        className="rounded-lg border-2 border-saigon/40 px-3 py-3 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
       <input
         name="parentPhone"
@@ -119,21 +119,21 @@ export default function WaitlistForm() {
         required
         placeholder="Parent's phone number"
         maxLength={40}
-        className="rounded-lg border-2 border-saigon/40 px-3 py-2.5 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
+        className="rounded-lg border-2 border-saigon/40 px-3 py-3 text-base font-semibold text-ink placeholder:font-medium placeholder:text-ink/50 focus:border-saigon focus:outline-none"
       />
       {error && <p className="text-sm font-bold text-red-600">{error}</p>}
-      <div className="mt-1 flex items-center gap-3">
+      <div className="mt-2 flex items-center gap-3">
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="rounded-full bg-energy px-6 py-2.5 text-sm font-extrabold text-ink shadow-[0_4px_0_#d18e07] disabled:opacity-60"
+          className="rounded-full bg-energy px-6 py-3 text-sm font-extrabold text-ink shadow-[0_4px_0_#d18e07] disabled:opacity-60"
         >
           {status === "submitting" ? "Sending…" : "Notify me"}
         </button>
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="text-sm font-extrabold text-ink/70 hover:text-ink"
+          className="px-3 py-3 text-sm font-extrabold text-ink/70 hover:text-ink"
         >
           Cancel
         </button>

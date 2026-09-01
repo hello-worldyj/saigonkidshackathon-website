@@ -55,7 +55,7 @@ export default function Faq() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="faq" className="relative px-4 py-24">
+    <section ref={sectionRef} id="faq" className="relative px-4 py-16 sm:py-20 md:py-24">
       {/* big hook: a giant question mark leaning in from the right */}
       <span
         className="anchor-wiggle pointer-events-none absolute right-12 top-1/4 -z-[1] hidden rotate-12 select-none text-[16rem] font-bold leading-none text-[#c9d7ee] lg:block"
@@ -66,15 +66,15 @@ export default function Faq() {
       <div className="mx-auto max-w-3xl">
         <div className="relative text-center">
           <PixelGrid className="ambient-float absolute -top-8 right-0 hidden md:block" size={32} />
-          <p className="mb-3 text-sm font-semibold text-saigon">
+          <p className="mb-3 text-xs font-semibold text-saigon sm:text-sm">
             Good questions ✦
           </p>
-          <h2 className="text-4xl font-bold leading-tight md:text-5xl">
+          <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
             Frequently asked <span className="text-energy">everything</span>
           </h2>
         </div>
 
-        <div className="mt-12 space-y-7">
+        <div className="mt-10 space-y-5 sm:mt-12 sm:space-y-7">
           {FAQS.map((faq, i) => {
             const isOpen = open === i;
             return (
@@ -94,9 +94,9 @@ export default function Faq() {
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 rounded-2xl px-6 py-5 text-left"
+                  className="flex w-full items-center justify-between gap-4 rounded-2xl px-5 py-4 text-left sm:px-6 sm:py-5"
                 >
-                  <span className="text-lg font-semibold">
+                  <span className="text-base font-semibold sm:text-lg">
                     {faq.q}
                   </span>
                   <span
@@ -112,7 +112,7 @@ export default function Faq() {
                 </button>
                 <div className="faq-answer">
                   <div>
-                    <p className="px-6 pb-5 font-medium text-ink/70">{faq.a}</p>
+                    <p className="px-5 pb-4 text-sm font-medium text-ink/70 sm:px-6 sm:pb-5 sm:text-base">{faq.a}</p>
                   </div>
                 </div>
               </div>

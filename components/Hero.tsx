@@ -143,7 +143,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="top"
-      className="relative flex min-h-svh flex-col items-center justify-start overflow-hidden px-4 pt-28 pb-16 md:pt-40"
+      className="relative flex min-h-svh flex-col items-center justify-start overflow-hidden px-3 pt-20 pb-12 sm:px-4 sm:pt-28 md:pb-16 md:pt-40"
     >
       {/* scene: saigon skyline left, palms right (the hoover-tower analog) */}
       {/* the three anchors: big tower left, sign center, foliage corner right */}
@@ -185,7 +185,7 @@ export default function Hero() {
       <div className="hero-content relative flex max-w-4xl flex-col items-center text-center">
         <div className="relative">
           {/* the sign */}
-          <div className="hero-sign relative rounded-[2rem] border-[6px] border-saigon bg-white px-8 py-8 shadow-[inset_0_0_0_6px_#c9d7ee,inset_0_-4px_0_6px_#a8bfe2,0_10px_40px_rgba(1,69,180,0.12)] sm:px-14 sm:py-10">
+          <div className="hero-sign relative rounded-[1.5rem] border-4 border-saigon bg-white px-5 py-6 shadow-[inset_0_0_0_4px_#c9d7ee,inset_0_-3px_0_4px_#a8bfe2,0_8px_32px_rgba(1,69,180,0.12)] sm:rounded-[2rem] sm:border-[6px] sm:px-8 sm:py-8 sm:shadow-[inset_0_0_0_6px_#c9d7ee,inset_0_-4px_0_6px_#a8bfe2,0_10px_40px_rgba(1,69,180,0.12)] md:px-14 md:py-10">
             {/* pixel-grid accents tucked into the bevel's corners */}
             <PixelGrid className="absolute left-4 top-4" size={16} />
             <PixelGrid className="absolute right-4 top-4 -scale-x-100" size={16} />
@@ -227,7 +227,7 @@ export default function Hero() {
               className="hero-logo mx-auto mb-4"
             />
 
-            <h1 className="relative text-5xl font-bold leading-[0.95] sm:text-6xl md:text-7xl">
+            <h1 className="relative text-4xl font-bold leading-[0.95] sm:text-5xl md:text-6xl lg:text-7xl">
               <span className="sr-only">Saigon Kids Hackathon</span>
               <SplitWord word="Saigon Kids" className="block text-energy" />
               <SplitWord word="Hackathon" className="block text-saigon" />
