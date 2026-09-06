@@ -66,7 +66,7 @@ export default function WaitlistForm() {
       <button
         type="button"
         onClick={() => setStatus("open")}
-        className="hero-fade inline-flex items-center gap-2 rounded-full bg-energy px-7 py-3.5 text-base font-extrabold text-ink shadow-[0_6px_0_#d18e07] transition-transform hover:-translate-y-0.5"
+        className="inline-flex items-center gap-2 rounded-full bg-energy px-7 py-3 text-base font-extrabold text-ink shadow-[0_4px_0_#d18e07] transition-transform hover:-translate-y-0.5"
       >
         Registration opens soon — notify me
         <Sparkle size={16} color="#1e293b" />

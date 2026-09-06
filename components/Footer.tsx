@@ -130,6 +130,47 @@ export default function Footer() {
           </ul>
         </nav>
 
+        {/* social + contact — same plain-link treatment as the pages row above */}
+        <div className="footer-pop mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+          <a
+            href="https://www.instagram.com/saigonkidshackathon/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors hover:text-energy"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="2" />
+              <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
+              <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" />
+            </svg>
+            Instagram
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61594199272169"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors hover:text-energy"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M15 8.5h2V5.4c-.34-.05-1.53-.15-2.9-.15-2.87 0-4.84 1.75-4.84 4.97v2.63H6.5v3.5h2.76V21h3.62v-4.65h2.65l.42-3.5h-3.07V10.6c0-1.01.27-1.7 1.72-1.7Z"
+                fill="currentColor"
+              />
+            </svg>
+            Facebook
+          </a>
+          <a
+            href="mailto:saigonkidshackathonoffical@gmail.com"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors hover:text-energy"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" strokeWidth="2" />
+              <path d="M4 7l8 6 8-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            saigonkidshackathonoffical@gmail.com
+          </a>
+        </div>
+
         <div className="footer-pop mt-10 flex flex-col items-center gap-4 border-t border-white/20 pt-8 text-sm font-medium text-white/70 md:flex-row md:justify-between">
           <p>© 2027 Saigon Kids Hackathon</p>
           <CodeMark size={40} chevronColor="#ffffff" className="ambient-float opacity-80" data-amp="s" />

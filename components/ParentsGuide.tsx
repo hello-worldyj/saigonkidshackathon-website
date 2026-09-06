@@ -210,7 +210,7 @@ function Bubble({ item }: { item: GuideItem }) {
 
 function QuickFaq({ item }: { item: GuideItem }) {
   // the accordion from the faq section, one bubble open at a time
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
   return (
     <div className="board-item md:col-span-2">
       <h3 className="mb-6 text-2xl font-semibold leading-7">{item.title}</h3>

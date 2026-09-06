@@ -266,7 +266,7 @@ export default function Hero() {
           We are a non-profit organization
         </p>
 
-        <div className="hero-fade mt-4 flex flex-col gap-3 sm:mt-7 sm:flex-row sm:gap-4">
+        <div className="hero-fade mt-4 flex flex-col items-center justify-center gap-3 sm:mt-7 sm:flex-row sm:gap-4">
           <WaitlistForm />
           <SiteLink
             href="/#about"
@@ -275,11 +275,11 @@ export default function Hero() {
             What is it?
           </SiteLink>
         </div>
-      </div>
 
-      <p className="hero-hint absolute bottom-6 text-sm font-medium text-ink/50">
-        Scroll to explore ↓
-      </p>
+        <p className="hero-hint mt-8 text-sm font-medium text-ink/50 sm:mt-12">
+          Scroll to explore ↓
+        </p>
+      </div>
     </section>
   );
 }
