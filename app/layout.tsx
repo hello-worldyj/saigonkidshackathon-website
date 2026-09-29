@@ -17,6 +17,7 @@ const dynapuff = DynaPuff({
 const SITE_URL = "https://saigonkidshackathon.web.app";
 const REGISTRATION_OPENED = "2026-09-29T00:00:00+07:00";
 const DESCRIPTION = `One big day of building, coding, and playing — ${EVENT.spots} young makers aged ${AGES}, ${EVENT.date}, ${EVENT.city}.`;
+const schemaTime = (time: string) => time.padStart(5, "0");
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -73,14 +74,19 @@ const eventJsonLd = {
   name: `${EVENT.name} 2027`,
   alternateName: EVENT.name,
   description: DESCRIPTION,
-  startDate: `2027-03-06T${EVENT.kickoff}:00+07:00`,
-  endDate: `2027-03-06T${EVENT.demos}:00+07:00`,
+  startDate: `2027-03-06T${schemaTime(EVENT.kickoff)}:00+07:00`,
+  endDate: `2027-03-06T${schemaTime(EVENT.demos)}:00+07:00`,
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
   location: {
     "@type": "Place",
-    name: EVENT.city,
-    address: { "@type": "PostalAddress", addressLocality: EVENT.city, addressCountry: "VN" },
+    name: "Saigon South International School",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: EVENT.city,
+      addressRegion: EVENT.city,
+      addressCountry: "VN",
+    },
   },
   image: [`${SITE_URL}/logo.png`],
   offers: {
