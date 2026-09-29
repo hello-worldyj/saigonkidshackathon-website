@@ -15,6 +15,7 @@ const dynapuff = DynaPuff({
 });
 
 const SITE_URL = "https://saigonkidshackathon.web.app";
+const REGISTRATION_OPENED = "2026-09-29T00:00:00+07:00";
 const DESCRIPTION = `One big day of building, coding, and playing — ${EVENT.spots} young makers aged ${AGES}, ${EVENT.date}, ${EVENT.city}.`;
 
 export const metadata: Metadata = {
@@ -69,7 +70,8 @@ const websiteJsonLd = {
 const eventJsonLd = {
   "@context": "https://schema.org",
   "@type": "Event",
-  name: EVENT.name,
+  name: `${EVENT.name} 2027`,
+  alternateName: EVENT.name,
   description: DESCRIPTION,
   startDate: `2027-03-06T${EVENT.kickoff}:00+07:00`,
   endDate: `2027-03-06T${EVENT.demos}:00+07:00`,
@@ -83,12 +85,15 @@ const eventJsonLd = {
   image: [`${SITE_URL}/logo.png`],
   offers: {
     "@type": "Offer",
+    name: "Builder Pass",
     priceCurrency: "VND",
     price: String(EVENT.fee.amount),
     availability: "https://schema.org/PreOrder",
-    url: SITE_URL,
+    validFrom: REGISTRATION_OPENED,
+    url: EVENT.registrationUrl,
   },
   organizer: { "@type": "Organization", name: EVENT.name, url: SITE_URL },
+  performer: { "@type": "Organization", name: EVENT.name, url: SITE_URL },
 };
 
 export default function RootLayout({
