@@ -70,10 +70,9 @@ const eventJsonLd = {
   },
   image: [`${SITE_URL}/logo.png`],
   offers: {
-    "@type": "AggregateOffer",
+    "@type": "Offer",
     priceCurrency: "VND",
-    lowPrice: "250000",
-    highPrice: "350000",
+    price: String(EVENT.fee.amount),
     availability: "https://schema.org/PreOrder",
     url: SITE_URL,
   },

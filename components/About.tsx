@@ -26,13 +26,8 @@ const CARDS = [
     art: <PixelBulb size={88} />,
   },
   {
-    title: "Mentors everywhere",
-    body: "Friendly engineers and teachers roam the floor all day, ready to unstick you.",
-    art: <FloatingLaptop width={124} />,
-  },
-  {
-    title: "Demos, prizes & pizza",
-    body: "Every team shows off what they made on the big stage — and everyone eats well.",
+    title: "Demos & prizes",
+    body: "Every team shows off what they made on the big stage, then the awards begin.",
     art: <PixelTrophy size={96} />,
   },
 ];
@@ -207,7 +202,7 @@ export default function About() {
               <p className="about-line mt-6 text-xl font-medium leading-snug text-ink/80 lg:text-2xl">
                 It&apos;s a one-day invention marathon for kids. You team up with
                 friends, dream up an idea, and build it — a game, an app, a robot, a
-                website — with mentors beside you the whole way. No grades, no
+                website — with support nearby the whole way. No grades, no
                 pressure, just making things you&apos;re proud of.
               </p>
               <p className="about-line mt-4 text-base font-semibold text-saigon lg:text-lg">

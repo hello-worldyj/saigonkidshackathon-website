@@ -8,14 +8,12 @@ export const EVENT = {
   date: "March 6, 2027",
   dateLong: "Saturday, March 6, 2027",
   city: "Ho Chi Minh City",
-  spots: 120,
+  spots: 135,
   hours: 8,
   ages: { min: 9, max: 16 },
   grades: { min: 3, max: 11 },
   team: { min: 1, max: 3 },
-  // kept for anywhere a single figure is all that fits (chips, summaries) —
-  // the low end of TICKETS, below
-  fee: { amount: 250_000, currency: "VND", display: "250,000 VND" },
+  fee: { amount: 300_000, currency: "VND", display: "300,000 VND" },
   aiAllowed: true,
   // the clock the rules run on
   kickoff: "8:30",
@@ -28,21 +26,16 @@ export const AGES = `${EVENT.ages.min}–${EVENT.ages.max}`;
 export const GRADES = `Grades ${EVENT.grades.min}–${EVENT.grades.max}`;
 export const TEAM_SIZE = `${EVENT.team.min}–${EVENT.team.max}`;
 
-/* what every ticket pays for, regardless of tier */
+/* what the ticket pays for */
 export const FEE_COVERS = [
   "The whole day, kickoff to awards",
   "Snacks",
   "The builders kit",
-  "Mentors on the floor all day",
   "The judging lab and awards",
 ];
 
-/* the lunch item on the pricier ticket */
-export const LUNCH_ITEM = "bánh mì";
-
-/* the two ticket tiers — same day, same everything, except lunch */
 export type Ticket = {
-  id: "standard" | "lunch";
+  id: "builder";
   name: string;
   amount: number;
   display: string;
@@ -50,8 +43,7 @@ export type Ticket = {
 };
 
 export const TICKETS: Ticket[] = [
-  { id: "standard", name: "Standard", amount: 250_000, display: "250,000 VND", lunch: false },
-  { id: "lunch", name: `With lunch (${LUNCH_ITEM})`, amount: 350_000, display: "350,000 VND", lunch: true },
+  { id: "builder", name: "Builder Pass", amount: 300_000, display: "300,000 VND", lunch: false },
 ];
 
 /* the non-profit line, reused wherever we talk about the fee or who runs

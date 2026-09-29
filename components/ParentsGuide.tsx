@@ -14,7 +14,7 @@ import { EVENT, TICKETS } from "./event";
 gsap.registerPlugin(ScrollTrigger);
 
 /* the three facts a parent checks first, as chips under the title */
-const CHIPS = [EVENT.dateLong, EVENT.city, `${TICKETS[0].display}–${TICKETS[1].display}`];
+const CHIPS = [EVENT.dateLong, EVENT.city, TICKETS[0].display];
 
 /* the resting tilt of each paper note, in the order they're pinned */
 const NOTE_TILT = [-1.5, 1, -0.8, 1.2];

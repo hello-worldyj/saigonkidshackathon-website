@@ -14,7 +14,7 @@ const ART: Record<KitItem["id"], React.ReactNode> = {
   snacks: <KitBadge kind="snacks" size={118} />,
   stickers: <KitBadge kind="stickers" size={118} />,
   hat: <KitBadge kind="hat" size={118} />,
-  wristbands: <KitBadge kind="wristbands" size={118} />,
+  toteBags: <KitBadge kind="toteBags" size={118} />,
 };
 
 /* where each item comes to rest around the bag on md+ (full strings so
@@ -23,7 +23,7 @@ const SLOT: Record<KitItem["id"], string> = {
   snacks: "md:absolute md:left-[4%] md:top-[18%]",
   stickers: "md:absolute md:left-[24%] md:top-[2%]",
   hat: "md:absolute md:right-[22%] md:top-0",
-  wristbands: "md:absolute md:right-[4%] md:top-[20%]",
+  toteBags: "md:absolute md:right-[4%] md:top-[20%]",
 };
 
 /* the resting lean of each item, landed by gsap so no-js stays straight */
@@ -31,7 +31,7 @@ const TILT: Record<KitItem["id"], number> = {
   snacks: -6,
   stickers: 3,
   hat: 6,
-  wristbands: -3,
+  toteBags: -3,
 };
 
 export default function BuildersKit() {
@@ -154,7 +154,7 @@ export default function BuildersKit() {
             Every builder gets a <span className="text-saigon">builders kit</span>
           </h2>
           <p className="kit-line mt-3 text-sm font-medium text-ink/60 sm:text-base">
-            Snacks, stickers, a hat and wristbands — yours to keep.
+            Snacks, stickers, a hat and tote bags — yours to keep.
           </p>
         </div>
 

@@ -15,7 +15,7 @@ const FAQS = [
   },
   {
     q: "Do I need to know how to code?",
-    a: "Nope! Total beginners are welcome. Mentors will help you every step of the way, and there are beginner-friendly tools for every idea.",
+    a: "Nope! Total beginners are welcome, and there are beginner-friendly tools for every idea.",
   },
   {
     q: "What should I bring?",
@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     q: "How much does it cost?",
-    a: `${TICKETS[0].display} standard, or ${TICKETS[1].display} with lunch (a bánh mì) included. Both cover the whole day — snacks, the builders kit, mentors, and the judging lab. How to pay comes with registration.`,
+    a: `${TICKETS[0].display}. It covers the whole day — snacks, the builders kit, and the judging lab. How to pay comes with registration.`,
   },
   {
     q: "Do parents stay?",

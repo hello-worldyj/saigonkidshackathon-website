@@ -33,7 +33,7 @@ export const PARENTS_GUIDE: GuideItem[] = [
     kind: "note",
     title: "What the day is",
     body: [
-      `One Saturday of building. Kids team up (${TEAM_SIZE} per team), pick a challenge revealed that morning, and make something real — a game, an app, a website, a gadget — with mentors beside them the whole way. No grades, no homework: the point is to finish something they're proud of and show it off.`,
+      `One Saturday of building. Kids team up (${TEAM_SIZE} per team), pick a challenge revealed that morning, and make something real — a game, an app, a website, a gadget. No grades, no homework: the point is to finish something they're proud of and show it off.`,
     ],
   },
   {
@@ -47,7 +47,7 @@ export const PARENTS_GUIDE: GuideItem[] = [
     kind: "tag",
     title: "The fee",
     body: [
-      `Two tiers: ${TICKETS[0].display} standard, or ${TICKETS[1].display} with lunch (a bánh mì) included. Both cover the whole day: snacks, the builders kit, the mentors, and the judging lab. How and when to pay comes with the registration confirmation.`,
+      `One ticket: ${TICKETS[0].display}. It covers the whole day: snacks, the builders kit, and the judging lab. How and when to pay comes with the registration confirmation.`,
       NONPROFIT_NOTE,
     ],
   },
@@ -69,7 +69,7 @@ export const PARENTS_GUIDE: GuideItem[] = [
     kind: "note",
     title: "Food",
     body: [
-      "Breakfast at check-in, lunch at 12:00, and light snacks in the builders kit. Tell us about allergies and dietary needs at registration and we'll plan around them.",
+      "Light snacks are included in the builders kit. Tell us about allergies and dietary needs at registration and we'll plan around them.",
     ],
   },
   {
@@ -77,7 +77,7 @@ export const PARENTS_GUIDE: GuideItem[] = [
     kind: "note",
     title: "Safety and supervision",
     body: [
-      "Mentors and organisers are on the floor all day and easy to spot. Kids stay in the event space; anyone leaving the venue does so with their parent or chaperone. Hardware projects are checked by an organiser before they're switched on.",
+      "Organisers are on the floor all day and easy to spot. Kids stay in the event space; anyone leaving the venue does so with their parent or chaperone. Hardware projects are checked by an organiser before they're switched on.",
     ],
   },
   {
@@ -108,7 +108,7 @@ export const PARENTS_GUIDE: GuideItem[] = [
       },
       {
         q: "My child has never coded. Is that a problem?",
-        a: "Not at all. Beginners are exactly who this is for; mentors and beginner-friendly tools carry them the rest of the way.",
+        a: "Not at all. Beginners are exactly who this is for; beginner-friendly tools help them get started.",
       },
       {
         q: "Do they need their own team?",

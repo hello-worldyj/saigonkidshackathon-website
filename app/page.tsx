@@ -8,7 +8,6 @@ import Prizes from "@/components/Prizes";
 import BuildersKit from "@/components/BuildersKit";
 import Partnership from "@/components/Partnership";
 import Faq from "@/components/Faq";
-import Founders from "@/components/Founders";
 import ImportantInfo from "@/components/ImportantInfo";
 import Footer from "@/components/Footer";
 import AmbientMotion from "@/components/AmbientMotion";
@@ -26,7 +25,6 @@ export default function Home() {
       <Prizes />
       <BuildersKit />
       <Partnership />
-      <Founders />
       <ImportantInfo />
       <Faq />
       <Footer />

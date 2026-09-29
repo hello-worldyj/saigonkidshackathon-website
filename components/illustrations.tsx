@@ -3,6 +3,7 @@
    chunky flat shapes in blue and yellow, fixed intrinsic sizes, every one
    aria-hidden. */
 
+import Image from "next/image";
 import { BLUE, BLUE_DEEP, YELLOW, YELLOW_DEEP, SKY_LIGHT, SKY_DEEP, METAL } from "./palette";
 
 type SvgProps = { className?: string; size?: number } & React.SVGProps<SVGSVGElement>;
@@ -278,12 +279,12 @@ export function ToteBag({
   );
 }
 
-export type KitKind = "snacks" | "stickers" | "hat" | "wristbands";
+export type KitKind = "snacks" | "stickers" | "hat" | "toteBags";
 
 export function KitIcon({ kind, className = "", size = 40 }: { kind: KitKind; className?: string; size?: number }) {
   // simple flat marks for the four things in the bag: a cookie, a star
-  // sticker with a peeled corner, a wristband with its clasp — the cap is
-  // the real emoji instead of a drawn mark
+  // sticker with a peeled corner, a tote bag — the cap is the real emoji
+  // instead of a drawn mark
   if (kind === "hat") {
     return (
       <span
@@ -293,6 +294,19 @@ export function KitIcon({ kind, className = "", size = 40 }: { kind: KitKind; cl
       >
         🧢
       </span>
+    );
+  }
+  if (kind === "toteBags") {
+    return (
+      <Image
+        src="/tote-bag.png"
+        alt=""
+        width={Math.round(size * 1.45)}
+        height={Math.round(size * 1.15)}
+        className={`object-contain ${className}`}
+        style={{ width: size * 1.45, height: size * 1.15 }}
+        aria-hidden="true"
+      />
     );
   }
   return (
@@ -325,15 +339,6 @@ export function KitIcon({ kind, className = "", size = 40 }: { kind: KitKind; cl
           />
           <path d="M30 34.8 L35.5 33.3 L31.6 28.5 Z" fill={YELLOW} />
           <circle cx="17" cy="16" r="2" fill="#fff" opacity="0.7" />
-        </>
-      )}
-      {kind === "wristbands" && (
-        <>
-          <rect x="4" y="14" width="32" height="12" rx="6" fill={BLUE} />
-          <circle cx="10" cy="20" r="1.8" fill="#fff" />
-          <circle cx="30" cy="20" r="1.8" fill="#fff" />
-          <rect x="16" y="11" width="8" height="18" rx="2" fill={YELLOW} />
-          <rect x="18.5" y="16" width="3" height="8" rx="1" fill={BLUE} />
         </>
       )}
     </svg>

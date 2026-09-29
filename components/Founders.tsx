@@ -80,7 +80,7 @@ export default function Founders() {
         </div>
 
         <p className="mt-10 font-medium text-ink/70">
-          Want to help run the day? Mentor and volunteer sign-ups open soon.
+          Want to help run the day? Volunteer sign-ups open soon.
         </p>
       </div>
     </section>

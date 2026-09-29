@@ -318,7 +318,7 @@ export default function ImportantInfo() {
               {/* the deck: clipped while it glides between card heights */}
               <div ref={deckRef} className="info-deck relative overflow-hidden">
               <Panel id="fees" title="Fees" active={active === "fees"}>
-                {/* two tags, one per ticket, hung from a short string each */}
+                {/* the ticket tag, hung from a short string */}
                 <div className="flex flex-wrap items-start gap-6">
                   {TICKETS.map((ticket, i) => (
                     <div key={ticket.id} className="relative inline-block pt-4">
@@ -333,15 +333,11 @@ export default function ImportantInfo() {
                         <span className="text-lg font-bold">{ticket.display}</span>
                       </PrizeTag>
                       <p className="mt-2 text-xs font-bold uppercase tracking-widest text-ink/50">
-                        {ticket.lunch ? "With lunch" : "Standard"}
+                        {ticket.name}
                       </p>
                     </div>
                   ))}
                 </div>
-                <p className="mt-4 text-base font-medium leading-7 text-ink/70 md:text-lg">
-                  The lunch ticket adds a bánh mì at midday — everything else is identical between
-                  the two.
-                </p>
                 <p className="mt-3 text-sm font-bold text-saigon">{NONPROFIT_NOTE}</p>
                 <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-ink/50">
                   What it covers

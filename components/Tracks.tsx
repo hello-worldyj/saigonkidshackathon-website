@@ -20,7 +20,7 @@ const TRACKS: Track[] = [
     n: 1,
     name: "To be revealed",
     blurb:
-      "The theme and its tracks stay under wraps until closer to the day. Whatever it is, you'll build something real around it with a team and mentors beside you.",
+      "The theme and its tracks stay under wraps until closer to the day. Whatever it is, you'll build something real around it with your team.",
   },
   {
     n: 2,

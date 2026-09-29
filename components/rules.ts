@@ -81,7 +81,7 @@ export const RULES: Rule[] = [
     summary: "Youth-appropriate projects, respect for everyone. Harassment ends your day.",
     paragraphs: [
       "Projects must be appropriate for a youth event — nothing explicit, hateful, or otherwise inappropriate.",
-      "Treat every participant, mentor, judge, and organizer with respect. Harassment of any kind ends your day at the event.",
+      "Treat every participant, judge, and organizer with respect. Harassment of any kind ends your day at the event.",
     ],
   },
   {
@@ -90,7 +90,7 @@ export const RULES: Rule[] = [
     title: "Hardware and safety",
     summary: "Hardware must be safe for a school environment. Ask an organizer if unsure.",
     paragraphs: [
-      "If your project involves hardware, keep it safe for a school environment — no exposed high voltage, open flame, or anything that could injure a participant, mentor, or judge.",
+      "If your project involves hardware, keep it safe for a school environment — no exposed high voltage, open flame, or anything that could injure a participant or judge.",
       "Check with an organizer before using tools or materials you're unsure about.",
     ],
   },
