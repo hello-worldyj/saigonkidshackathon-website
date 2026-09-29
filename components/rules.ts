@@ -6,7 +6,7 @@ import { EVENT, AGES, GRADES, TEAM_SIZE } from "./event";
 export type Rule = { n: number; id: string; title: string; summary: string; paragraphs: string[] };
 
 export const RULES_INTRO =
-  "Short, plain, and published before registration opens — so nothing about the day is a surprise.";
+  "Short, plain, and published now that registration is open — so nothing about the day is a surprise.";
 
 export const RULES_CLOSING =
   "Questions about anything here? Reach out using the contact details in the footer, or read the [parents' guide](/parents) for the safety and supervision detail.";

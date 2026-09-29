@@ -299,12 +299,12 @@ export function KitIcon({ kind, className = "", size = 40 }: { kind: KitKind; cl
   if (kind === "toteBags") {
     return (
       <Image
-        src="/tote-bag.png"
+        src="/tote-bag-badge.png"
         alt=""
-        width={Math.round(size * 1.45)}
-        height={Math.round(size * 1.15)}
+        width={Math.round(size * 1.1)}
+        height={Math.round(size * 1.1)}
         className={`object-contain ${className}`}
-        style={{ width: size * 1.45, height: size * 1.15 }}
+        style={{ width: size * 1.1, height: size * 1.1 }}
         aria-hidden="true"
       />
     );
@@ -350,7 +350,7 @@ export function KitBadge({ kind, className = "", size = 120 }: { kind: KitKind; 
   // in the middle — the "logo" of each thing in the kit
   return (
     <span
-      className={`relative grid shrink-0 place-items-center rounded-full border-4 border-saigon bg-white shadow-[0_6px_0_#01337f] ${className}`}
+      className={`relative grid shrink-0 place-items-center overflow-hidden rounded-full border-4 border-saigon bg-white shadow-[0_6px_0_#01337f] ${className}`}
       style={{ width: size, height: size }}
       aria-hidden="true"
     >

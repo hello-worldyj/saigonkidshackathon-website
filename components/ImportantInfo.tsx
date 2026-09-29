@@ -351,10 +351,10 @@ export default function ImportantInfo() {
                   ))}
                 </ul>
                 <p className="mt-5 text-base font-medium leading-7 text-ink/70 md:text-lg">
-                  How and when to pay comes with your registration confirmation.
+                  Registration is open through our Google Form. Payment details come with your registration confirmation.
                 </p>
                 <p className="mt-2 text-base font-medium leading-7 text-ink/70 md:text-lg">
-                  Registration opens soon.
+                  Food vendors, including Jimmy&apos;s Pizza, are planned on site for extra food purchases.
                 </p>
               </Panel>
 

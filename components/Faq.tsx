@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     q: "How much does it cost?",
-    a: `${TICKETS[0].display}. It covers the whole day — snacks, the builders kit, and the judging lab. How to pay comes with registration.`,
+    a: `${TICKETS[0].display}. It covers the whole day — snacks, the builders kit, and the judging lab. We also plan to have vendors like Jimmy's Pizza on site for extra food purchases. How to pay comes with registration.`,
   },
   {
     q: "Do parents stay?",

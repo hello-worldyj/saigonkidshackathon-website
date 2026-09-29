@@ -13,6 +13,8 @@ const LINKS = [
   { href: "/parents", label: "Parents' guide" },
   { href: "/rules#judging-and-prizes", label: "How judging works" },
   { href: "/#info", label: "Fees & requirements" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
 ];
 
 gsap.registerPlugin(ScrollTrigger);
@@ -98,9 +100,14 @@ export default function Footer() {
         </p>
 
         <div className="footer-pop mt-8 flex justify-center">
-          <span className="rounded-full bg-energy px-7 py-3.5 text-base font-semibold text-ink shadow-[0_6px_0_#d18e07]">
-            Registration opens soon
-          </span>
+          <a
+            href={EVENT.registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-energy px-7 py-3.5 text-base font-semibold text-ink shadow-[0_6px_0_#d18e07] transition-transform hover:-translate-y-0.5"
+          >
+            Registration opened
+          </a>
         </div>
 
         {/* who's behind it — bold names on their own row, a yellow × between */}

@@ -19,6 +19,7 @@ const DESCRIPTION = `One big day of building, coding, and playing — ${EVENT.sp
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: EVENT.name,
   title: { default: EVENT.name, template: `%s — ${EVENT.name}` },
   description: DESCRIPTION,
   keywords: [
@@ -50,6 +51,17 @@ export const metadata: Metadata = {
     description: `One big day of building, coding, and playing — ${EVENT.date}, ${EVENT.city}.`,
     images: ["/logo.png"],
   },
+  appleWebApp: {
+    title: EVENT.name,
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: EVENT.name,
+  alternateName: ["Saigon Kids Hackathon 2027", "SKH"],
+  url: SITE_URL,
 };
 
 // lets Google (and other search engines) show this as a rich result —
@@ -87,6 +99,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={dynapuff.variable}>
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}

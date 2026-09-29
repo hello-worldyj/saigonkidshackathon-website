@@ -8,8 +8,9 @@ export const EVENT = {
   date: "March 6, 2027",
   dateLong: "Saturday, March 6, 2027",
   city: "Ho Chi Minh City",
+  registrationUrl: "https://forms.gle/hC3vg8rJ5ze4k8vt7",
   spots: 135,
-  hours: 8,
+  hours: 11,
   ages: { min: 9, max: 16 },
   grades: { min: 3, max: 11 },
   team: { min: 1, max: 3 },
@@ -29,7 +30,7 @@ export const TEAM_SIZE = `${EVENT.team.min}–${EVENT.team.max}`;
 /* what the ticket pays for */
 export const FEE_COVERS = [
   "The whole day, kickoff to awards",
-  "Snacks",
+  "Light snacks: cookies, fruits, and a few drinks",
   "The builders kit",
   "The judging lab and awards",
 ];

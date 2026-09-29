@@ -69,7 +69,8 @@ export const PARENTS_GUIDE: GuideItem[] = [
     kind: "note",
     title: "Food",
     body: [
-      "Light snacks are included in the builders kit. Tell us about allergies and dietary needs at registration and we'll plan around them.",
+      "Light snacks are included in the builders kit: cookies, fruits, and a few drinks. We also plan to have food vendors on site, including Jimmy's Pizza, so families can buy extra food during the day.",
+      "Tell us about allergies and dietary needs at registration and we'll plan around them.",
     ],
   },
   {

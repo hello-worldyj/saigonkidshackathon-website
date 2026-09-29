@@ -118,7 +118,7 @@ export default function CostAndRule() {
               ))}
             </ul>
             <p className="mt-5 text-base font-medium leading-7 text-ink/70 md:text-lg">
-              How and when to pay comes with your registration confirmation. Registration opens soon.
+              Registration is open through our Google Form. Payment details come with your registration confirmation.
             </p>
           </div>
 
