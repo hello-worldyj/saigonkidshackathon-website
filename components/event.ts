@@ -10,7 +10,7 @@ export const EVENT = {
   city: "Ho Chi Minh City",
   registrationUrl: "https://forms.gle/hC3vg8rJ5ze4k8vt7",
   spots: 135,
-  hours: 11,
+  hours: 8,
   ages: { min: 9, max: 16 },
   grades: { min: 3, max: 11 },
   team: { min: 1, max: 3 },
