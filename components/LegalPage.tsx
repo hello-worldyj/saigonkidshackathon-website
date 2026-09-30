@@ -48,7 +48,7 @@ export default function LegalPage({ eyebrow, title, intro, updated, sections }: 
         </div>
 
         <p className="mt-10 text-center text-sm font-semibold text-ink/50">
-          Questions about these terms can be sent to saigonkidshackathonoffical@gmail.com.
+          Questions about these terms can be sent to saigonkidshackathon@ssis.edu.vn.
         </p>
       </div>
     </section>

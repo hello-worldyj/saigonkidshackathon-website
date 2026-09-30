@@ -61,7 +61,7 @@ const sections = [
   {
     title: "Contact",
     body: [
-      "To ask about privacy, update registration details, withdraw consent where allowed, or request deletion of personal data, contact saigonkidshackathonoffical@gmail.com.",
+      "To ask about privacy, update registration details, withdraw consent where allowed, or request deletion of personal data, contact saigonkidshackathon@ssis.edu.vn.",
       "We may need to verify that the request comes from a parent, legal guardian, or the relevant participant before changing or deleting records.",
     ],
   },
